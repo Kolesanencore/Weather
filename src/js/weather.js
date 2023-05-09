@@ -1,13 +1,11 @@
 const API_KEY = `6e3e286b7ba6b78d37123d7ccd0b674f`;
 const BASE_URL = `https://api.openweathermap.org/data/2.5/`;
 
-// Функция получения погоды по координатам
 function getWeatherByCoords(lat, lon) {
   const apiUrl = `${BASE_URL}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-      // Получаем необходимые данные о погоде из ответа сервера //
       const temperature = `${Math.floor(data.main.temp)}°`;
 
       const weatherDescr = data.weather[0].description;
