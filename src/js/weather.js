@@ -7,7 +7,7 @@ function getWeatherByCoords(lat, lon) {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-      // Получаем необходимые данные о погоде из ответа сервера
+      // Получаем необходимые данные о погоде из ответа сервера //
       const temperature = `${Math.floor(data.main.temp)}°`;
 
       const weatherDescr = data.weather[0].description;
